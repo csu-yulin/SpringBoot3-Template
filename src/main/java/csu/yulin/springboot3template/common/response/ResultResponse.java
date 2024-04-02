@@ -1,5 +1,6 @@
-package csu.yulin.springboot3template.common;
+package csu.yulin.springboot3template.common.response;
 
+import csu.yulin.springboot3template.enums.ResultCode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

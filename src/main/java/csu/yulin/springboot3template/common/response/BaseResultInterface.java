@@ -1,4 +1,4 @@
-package csu.yulin.springboot3template.common;
+package csu.yulin.springboot3template.common.response;
 
 /**
  * 基础结果接口，定义了获取响应码和错误描述的方法。

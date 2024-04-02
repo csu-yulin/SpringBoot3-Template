@@ -1,8 +1,9 @@
 package csu.yulin.springboot3template.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
+import csu.yulin.springboot3template.model.dto.user.UserQueryRequest;
 import csu.yulin.springboot3template.model.entity.User;
-import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * @author 刘飘
@@ -12,11 +13,33 @@ import jakarta.servlet.http.HttpServletRequest;
 public interface UserService extends IService<User> {
 
     /**
-     * 根据请求获取当前登录用户。
+     * 用户登录
      *
-     * @param request HttpServletRequest 对象，包含当前请求的信息。
-     * @return 当前登录用户对象。
+     * @param user 用户对象，包含登录所需的用户名和密码信息
+     * @return 登录成功后生成的 JWT Token
      */
-    User getLoginUser(HttpServletRequest request);
+    String login(User user);
 
+    /**
+     * 用户注册
+     *
+     * @param user 用户对象，包含注册所需的用户名和密码信息
+     * @return 注册成功后生成的 JWT Token
+     */
+    String register(User user);
+
+    /**
+     * 获取当前登录用户
+     *
+     * @return 当前登录用户
+     */
+    User getLoginUser();
+
+    /**
+     * 根据用户查询请求对象构建查询条件包装器
+     *
+     * @param userQueryRequest 用户查询请求对象
+     * @return 查询条件包装器
+     */
+    QueryWrapper<User> getQueryWrapper(UserQueryRequest userQueryRequest);
 }

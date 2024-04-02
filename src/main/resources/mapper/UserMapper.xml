@@ -5,18 +5,19 @@
 <mapper namespace="csu.yulin.springboot3template.mapper.UserMapper">
 
     <resultMap id="BaseResultMap" type="csu.yulin.springboot3template.model.entity.User">
-        <id property="id" column="id" jdbcType="INTEGER"/>
+        <id property="id" column="id" jdbcType="BIGINT"/>
         <result property="username" column="username" jdbcType="VARCHAR"/>
         <result property="email" column="email" jdbcType="VARCHAR"/>
         <result property="password" column="password" jdbcType="VARCHAR"/>
-        <result property="created_time" column="created_time" jdbcType="TIMESTAMP"/>
-        <result property="updated_time" column="updated_time" jdbcType="TIMESTAMP"/>
-        <result property="is_deleted" column="is_deleted" jdbcType="TINYINT"/>
+        <result property="role" column="role" jdbcType="VARCHAR"/>
+        <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
+        <result property="updatedTime" column="updated_time" jdbcType="TIMESTAMP"/>
+        <result property="isDeleted" column="is_deleted" jdbcType="TINYINT"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         id,username,email,
-        password,created_time,updated_time,
-        is_deleted
+        password,role,created_time,
+        updated_time,is_deleted
     </sql>
 </mapper>
